@@ -1,0 +1,213 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        // Celebrately Brand — Royal Blue & White (matching logo)
+        brand: {
+          50: '#f0f3ff',
+          100: '#e1e7ff',
+          200: '#c8d2ff',
+          300: '#a2b3ff',
+          400: '#758aff',
+          500: '#2b3394', // Logo Blue
+          600: '#212678',
+          700: '#171a5c',
+          800: '#0e0f3f',
+          900: '#060624',
+        },
+        // Wedding — Gold & Ivory
+        wedding: {
+          50: '#fdf8f0',
+          100: '#faefd8',
+          200: '#f4d9a0',
+          300: '#eec168',
+          400: '#e8a840',
+          500: '#d4913a',
+          600: '#b8762f',
+          700: '#8a5520',
+          800: '#5c3815',
+          900: '#2e1c0a',
+        },
+        // Birthday — Vibrant Purple/Pink
+        birthday: {
+          50: '#fdf4ff',
+          100: '#fae8ff',
+          200: '#f5d0fe',
+          300: '#f0abfc',
+          400: '#e879f9',
+          500: '#d946ef',
+          600: '#c026d3',
+          700: '#a21caf',
+          800: '#86198f',
+          900: '#701a75',
+        },
+        // Baby Shower — Soft Pastels
+        baby: {
+          50: '#fef7ff',
+          100: '#fde9ff',
+          200: '#f9d0ff',
+          300: '#f3a8ff',
+          400: '#e879f9',
+          pink: '#f9a8d4',
+          blue: '#bae6fd',
+          mint: '#a7f3d0',
+          yellow: '#fde68a',
+        },
+        // Graduation — Navy & Gold
+        grad: {
+          50: '#f0f4ff',
+          100: '#e0e9ff',
+          200: '#c7d6ff',
+          300: '#a4b8ff',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#1e3a8a',
+          700: '#1e40af',
+          800: '#1e3a8a',
+          900: '#1e1b4b',
+          gold: '#fbbf24',
+        },
+        // Engagement — Rose Gold
+        engagement: {
+          50: '#fff1f2',
+          100: '#ffe4e6',
+          200: '#fecdd3',
+          300: '#fda4af',
+          400: '#fb7185',
+          500: '#f43f5e',
+          600: '#e11d48',
+          700: '#be123c',
+          800: '#9f1239',
+          900: '#881337',
+          rose: '#f9a8d4',
+          gold: '#d4913a',
+        },
+        // Party — Neon
+        party: {
+          50: '#f0fdf4',
+          neon: '#39ff14',
+          purple: '#8b5cf6',
+          pink: '#ec4899',
+          blue: '#06b6d4',
+          orange: '#f97316',
+          dark: '#0f0f23',
+        },
+      },
+      fontFamily: {
+        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
+        script: ['Dancing Script', 'cursive'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Outfit', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'float-slow': 'float 9s ease-in-out infinite',
+        'float-fast': 'float 4s ease-in-out infinite',
+        'pulse-gold': 'pulseGold 2s ease-in-out infinite',
+        'spin-slow': 'spin 20s linear infinite',
+        'bounce-slow': 'bounce 3s ease-in-out infinite',
+        'shimmer': 'shimmer 2.5s linear infinite',
+        'confetti-fall': 'confettiFall 3s ease-in forwards',
+        'balloon-rise': 'balloonRise 4s ease-out forwards',
+        'heart-beat': 'heartBeat 1.5s ease-in-out infinite',
+        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+        'fade-in': 'fadeIn 1s ease-out forwards',
+        'scale-in': 'scaleIn 0.5s ease-out forwards',
+        'flip': 'flip 0.6s ease-in-out',
+        'star-twinkle': 'starTwinkle 2s ease-in-out infinite',
+        'cloud-drift': 'cloudDrift 15s linear infinite',
+        'neon-pulse': 'neonPulse 2s ease-in-out infinite',
+        'count-up': 'countUp 1s ease-out forwards',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        pulseGold: {
+          '0%, 100%': { boxShadow: '0 0 15px rgba(212, 145, 58, 0.4)' },
+          '50%': { boxShadow: '0 0 30px rgba(212, 145, 58, 0.8)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        confettiFall: {
+          '0%': { transform: 'translateY(-100vh) rotate(0deg)', opacity: '1' },
+          '100%': { transform: 'translateY(100vh) rotate(720deg)', opacity: '0' },
+        },
+        balloonRise: {
+          '0%': { transform: 'translateY(100vh)', opacity: '0' },
+          '100%': { transform: 'translateY(-20px)', opacity: '1' },
+        },
+        heartBeat: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '14%': { transform: 'scale(1.15)' },
+          '28%': { transform: 'scale(1)' },
+          '42%': { transform: 'scale(1.15)' },
+          '70%': { transform: 'scale(1)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        scaleIn: {
+          '0%': { transform: 'scale(0.8)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        flip: {
+          '0%': { transform: 'rotateY(0deg)' },
+          '50%': { transform: 'rotateY(90deg)' },
+          '100%': { transform: 'rotateY(0deg)' },
+        },
+        starTwinkle: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.3', transform: 'scale(0.7)' },
+        },
+        cloudDrift: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100vw)' },
+        },
+        neonPulse: {
+          '0%, 100%': { textShadow: '0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14' },
+          '50%': { textShadow: '0 0 5px #39ff14, 0 0 10px #39ff14' },
+        },
+        countUp: {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+      backgroundImage: {
+        'gold-shimmer': 'linear-gradient(90deg, transparent 25%, rgba(212,145,58,0.4) 50%, transparent 75%)',
+        'wedding-gradient': 'linear-gradient(135deg, #fdf8f0 0%, #faefd8 50%, #f4d9a0 100%)',
+        'party-gradient': 'linear-gradient(135deg, #0f0f23 0%, #1a0533 50%, #0f0f23 100%)',
+        'glass': 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      boxShadow: {
+        'gold': '0 4px 30px rgba(212, 145, 58, 0.3)',
+        'gold-lg': '0 8px 60px rgba(212, 145, 58, 0.5)',
+        'glass': '0 8px 32px rgba(0, 0, 0, 0.12)',
+        'neon': '0 0 20px rgba(57, 255, 20, 0.5)',
+        'neon-pink': '0 0 20px rgba(236, 72, 153, 0.5)',
+        'neon-purple': '0 0 20px rgba(139, 92, 246, 0.5)',
+        'premium': '0 25px 80px rgba(0, 0, 0, 0.15)',
+        'card': '0 10px 40px rgba(0, 0, 0, 0.1)',
+        'glass-glow': '0 8px 32px 0 rgba(43, 51, 148, 0.08)',
+        'glass-blue': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.15), 0 8px 32px 0 rgba(43, 51, 148, 0.12)',
+        'glass-white': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 4px 24px 0 rgba(0, 0, 0, 0.04)',
+      },
+    },
+  },
+  plugins: [],
+};
