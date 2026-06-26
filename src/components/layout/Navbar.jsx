@@ -5,15 +5,7 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 import logoImg from '../../../celebrately.jpg';
 
 const templates = [
-  { name: 'Wedding Website', path: '/wedding' },
-  { name: 'Wedding Invitation', path: '/invitation' },
-  { name: 'Birthday', path: '/birthday' },
-  { name: 'Baby Shower', path: '/baby-shower' },
-  { name: 'Baby Announcement', path: '/baby-announcement' },
-  { name: 'Graduation', path: '/graduation' },
-  { name: 'Engagement', path: '/engagement' },
-  { name: 'Party', path: '/party' },
-  { name: 'RSVP Page', path: '/rsvp' },
+ 
 ];
 
 export default function Navbar() {
@@ -55,9 +47,9 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1.5">
             <Link
-              to="/"
+              to="templates"
               className={`px-3 py-1.5 rounded-xl text-xs font-semibold tracking-wide uppercase transition-all duration-200 ${
-                location.pathname === '/'
+                location.pathname === 'templates'
                   ? 'text-brand-500 bg-brand-50 dark:bg-brand-950/20 dark:text-brand-400'
                   : 'text-slate-600 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-slate-900'
               }`}

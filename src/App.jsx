@@ -1,22 +1,14 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Lenis from 'lenis';
+import { ThemeProvider } from './context/ThemeContext';
 
 // Pages & Templates
 import Showcase from './pages/Showcase';
-import WeddingWebsite from './templates/wedding-website/WeddingWebsite';
-import WeddingInvitation from './templates/wedding-invitation/WeddingInvitation';
-import BirthdayCelebration from './templates/birthday/BirthdayCelebration';
-import BabyShower from './templates/baby-shower/BabyShower';
-import BabyAnnouncement from './templates/baby-announcement/BabyAnnouncement';
-import Graduation from './templates/graduation/Graduation';
-import Engagement from './templates/engagement/Engagement';
-import PartyInvitation from './templates/party/PartyInvitation';
-import RSVPLandingPage from './templates/rsvp-landing/RSVPLandingPage';
+
 
 function PageTransition({ children }) {
   return (
@@ -43,51 +35,7 @@ function AppRoutes() {
             <Footer />
           </PageTransition>
         } />
-        <Route path="/wedding" element={
-          <PageTransition>
-            <WeddingWebsite />
-          </PageTransition>
-        } />
-        <Route path="/invitation" element={
-          <PageTransition>
-            <WeddingInvitation />
-          </PageTransition>
-        } />
-        <Route path="/birthday" element={
-          <PageTransition>
-            <BirthdayCelebration />
-          </PageTransition>
-        } />
-        <Route path="/baby-shower" element={
-          <PageTransition>
-            <BabyShower />
-          </PageTransition>
-        } />
-        <Route path="/baby-announcement" element={
-          <PageTransition>
-            <BabyAnnouncement />
-          </PageTransition>
-        } />
-        <Route path="/graduation" element={
-          <PageTransition>
-            <Graduation />
-          </PageTransition>
-        } />
-        <Route path="/engagement" element={
-          <PageTransition>
-            <Engagement />
-          </PageTransition>
-        } />
-        <Route path="/party" element={
-          <PageTransition>
-            <PartyInvitation />
-          </PageTransition>
-        } />
-        <Route path="/rsvp" element={
-          <PageTransition>
-            <RSVPLandingPage />
-          </PageTransition>
-        } />
+        
         {/* 404 */}
         <Route path="*" element={
           <div className="min-h-screen flex items-center justify-center text-center px-4">

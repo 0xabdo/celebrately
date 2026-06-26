@@ -1,19 +1,31 @@
-import React, { createContext, useContext } from 'react';
-import { useTheme } from '../hooks/useTheme';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
-const ThemeContext = createContext(null);
+const ThemeContext = createContext();
+
+export function useTheme() {
+  return useContext(ThemeContext);
+}
 
 export function ThemeProvider({ children }) {
-  const theme = useTheme();
+  const [dark, setDark] = useState(() => {
+    const stored = localStorage.getItem('celebrately-theme');
+    if (stored) return stored === 'dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (dark) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('celebrately-theme', dark ? 'dark' : 'light');
+  }, [dark]);
+
   return (
-    <ThemeContext.Provider value={theme}>
+    <ThemeContext.Provider value={{ dark, setDark, toggle: () => setDark(d => !d) }}>
       {children}
     </ThemeContext.Provider>
   );
-}
-
-export function useThemeContext() {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error('useThemeContext must be used within ThemeProvider');
-  return ctx;
 }
